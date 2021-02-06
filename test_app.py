@@ -17,6 +17,7 @@
 import unittest
 
 from app import app
+import random
 
 class TestApp(unittest.TestCase):
     """Unit tests for app.py."""
@@ -117,7 +118,7 @@ class TestApp(unittest.TestCase):
         self.assertIn('18', result_page_text)
 
     def test_horoscope_taurus(self):
-        res = app.test_client().get('/horoscope_results?users_name=Moxie&horoscope_sign=aries')
+        res = app.test_client().get('/horoscope_results?users_name=Moxie&horoscope_sign=taurus')
         self.assertEqual(res.status_code, 200)
         random.seed(3)
 
